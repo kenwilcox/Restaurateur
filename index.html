@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" ng-app="orderApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Coming Soon</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="container theme-showcase" role="main">
+    <h2>Todo</h2>
+    <div ng-controller="OrderController as todoList">
+      
+      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+      
+      [ <a href="" ng-click="todoList.archive()"> archive</a> ]
+      
+      <ul class="unstyled">
+        <li ng-repeat="todo in todoList.todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      
+      <form class="navbar-form" ng-submit="todoList.addTodo()">
+        <div class="input-group">
+          <input class="form-control" type="text" ng-model="todoList.todoText" size="30" placeholder="add new todo here">
+          <input class="btn btn-primary" type="submit" value="Add Todo">
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
