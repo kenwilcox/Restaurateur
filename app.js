@@ -1,6 +1,5 @@
-angular.module('orderApp', [])
-  .controller('OrderController', function() {
-    //var title = 'My Title';
+angular.module('orderApp', []).controller('OrderController', function() {
+    
     var todoList = this;
     todoList.todos = [
       {text: 'learn angular', done: true},
