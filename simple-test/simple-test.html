@@ -1,0 +1,25 @@
+<head>
+  <title>MyPlace</title>
+</head>
+
+<body>
+  <h1>Welcome to MyPlace</h1>
+  {{> hello}}
+  
+  <ul>
+  {{#each menu}}
+  {{name}} - {{price}}
+  {{/each}}
+  </ul>
+
+  <h6>The menu should be above</h6>
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="item">
+  <li>{{name}} - {{price}}</li>
+</template>
